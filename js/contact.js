@@ -1,12 +1,12 @@
-
 document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form submission until validated
+
     let isValid = true;
 
     // Name validation
     const name = document.getElementById('name');
     const nameError = document.getElementById('nameError');
-    if (!name.value.trim()) {
+    if (name.value.trim().length < 3) {
         name.classList.add('is-invalid');
         nameError.style.display = 'block';
         isValid = false;
@@ -31,8 +31,8 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     // Phone validation
     const phone = document.getElementById('phone');
     const phoneError = document.getElementById('phoneError');
-    const phoneRegex = /^\+?[\d\s-]{10,}$/;
-    if (!phoneRegex.test(phone.value)) {
+    const phoneRegex = /^\d{10,}$/;
+    if (!phoneRegex.test(phone.value.trim())) {
         phone.classList.add('is-invalid');
         phoneError.style.display = 'block';
         isValid = false;
@@ -41,16 +41,16 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         phoneError.style.display = 'none';
     }
 
-    // Project scope validation
+    // Address validation
     const address = document.getElementById('address');
-    const projectError = document.getElementById('projectError');
+    const addressError = document.getElementById('addressError');
     if (!address.value.trim()) {
         address.classList.add('is-invalid');
-        projectError.style.display = 'block';
+        addressError.style.display = 'block';
         isValid = false;
     } else {
         address.classList.remove('is-invalid');
-        projectError.style.display = 'none';
+        addressError.style.display = 'none';
     }
 
     // Message validation
@@ -66,16 +66,12 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     }
 
     if (isValid) {
-        // Here you would typically send the form data to your server
-        console.log('Form is valid, ready to submit');
-        // Reset form after successful submission
-        this.reset();
+        this.submit(); // Submit the form if valid
     }
 });
 
 // Real-time validation
-const inputs = document.querySelectorAll('.form-control');
-inputs.forEach(input => {
+document.querySelectorAll('.form-control').forEach(input => {
     input.addEventListener('input', function () {
         if (this.value.trim()) {
             this.classList.remove('is-invalid');

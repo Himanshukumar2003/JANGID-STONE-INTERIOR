@@ -131,34 +131,39 @@
 
                 <div class="col-lg-7">
 
-                    <form class="contact-form" id="contactForm" novalidate>
+                    <form class="contact-form" id="contactForm" action="process_form.php" method="POST" novalidate>
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                    required>
                                 <p class="error-message" id="nameError">Please enter your name</p>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                    required>
                                 <p class="error-message" id="emailError">Please enter a valid email address</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                    placeholder="Phone Number" required>
                                 <p class="error-message" id="phoneError">Please enter a valid phone number</p>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" id="address" placeholder="Address" required>
-                                <p class="error-message" id="projectError">Please enter your Address</p>
+                                <input type="text" class="form-control" id="address" name="address"
+                                    placeholder="Address" required>
+                                <p class="error-message" id="addressError">Please enter your Address</p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" placeholder="Write Your Message"
+                            <textarea class="form-control" id="message" name="message" placeholder="Write Your Message"
                                 required></textarea>
                             <p class="error-message" id="messageError">Please enter your message</p>
                         </div>
                         <button type="submit" class="submit-btn">Send Now</button>
                     </form>
+
 
 
                 </div>
@@ -170,10 +175,10 @@
     <div class="faq-section section-padding bg-light">
         <div class="container">
 
-            <div class="row justify-content-center">
+            <div class="row g-4 justify-content-center">
 
                 <div class="col-lg-7 justify-content-center">
-                    <div class="faq">
+                    <div class="faq h-100">
 
                         <h2 class="faq-title">Have your any question <span>look here now</span></h2>
                         <p class="faq-description">

@@ -677,7 +677,6 @@ h1 {
 .faq-description {
     font-family: var(--e-global-typography-sndry-font-family);
     color: #666;
-    margin-bottom: 3rem;
     max-width: 800px;
 }
 

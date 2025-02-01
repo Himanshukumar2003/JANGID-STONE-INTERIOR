@@ -1094,7 +1094,7 @@ textarea.form-control {
 .project-card {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 30px;
 }
 
