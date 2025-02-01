@@ -572,10 +572,11 @@ h1 {
 
 .page-bannner {
     position: relative;
-    height: 400px;
+    height: 500px;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(../img/contact.jpg) center/cover no-repeat;
+        url(../img/bg/titlebar-img.jpg) center/cover no-repeat;
     display: flex;
+
     align-items: center;
     justify-content: center;
     text-align: center;
